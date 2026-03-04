@@ -103,13 +103,13 @@ const FuturisticFooter = () => {
                   { icon: Award, label: 'Certificado', desc: 'Conformidade LGPD', color: 'fuchsia' },
                   { icon: Zap, label: 'Alta Performance', desc: '99.9% uptime', color: 'cyan' },
                 ].map((item, i) => (
-                  <div key={i} className="group flex items-center gap-2 p-2 rounded-lg border border-white/5 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/10 transition-all duration-300">
+                  <div key={i} className="group flex items-center gap-2 p-2 rounded-lg border border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.03] hover:bg-gray-50 dark:hover:bg-white/[0.06] dark:hover:border-white/10 transition-all duration-300">
                     <div className={`flex items-center justify-center w-7 h-7 rounded-md bg-${item.color}-500/10`}>
                       <item.icon size={14} className={`text-${item.color}-400`} />
                     </div>
                     <div>
-                      <span className="text-white text-sm font-medium">{item.label}</span>
-                      <p className="text-gray-500 text-xs">{item.desc}</p>
+                      <span className="text-gray-800 dark:text-white text-sm font-medium">{item.label}</span>
+                      <p className="text-gray-500 dark:text-gray-500 text-xs">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -117,22 +117,8 @@ const FuturisticFooter = () => {
             </div>
           </div>
 
-          {/* Stats bar */}
-          <div className="flex flex-wrap justify-center gap-6 mb-6 py-4 border-t border-b border-white/5">
-            {[
-              { value: '+50.000', label: 'Consultas/dia' },
-              { value: '99.9%', label: 'Uptime' },
-              { value: '24/7', label: 'Suporte' },
-              { value: '+1.000', label: 'Empresas' },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-lg font-bold text-white">
-                  {stat.value}
-                </div>
-                <div className="text-gray-500 text-xs mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+
+
 
           {/* Bottom */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
