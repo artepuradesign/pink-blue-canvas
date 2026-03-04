@@ -6,7 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import HomeCarouselSection from "@/components/sections/HomeCarouselSection";
 import CleanHowItWorksSection from "@/components/sections/CleanHowItWorksSection";
 import RecentModulesCarousel from "@/components/sections/RecentModulesCarousel";
-import ProfessionalFooter from "@/components/ProfessionalFooter";
+import FuturisticFooter from "@/components/FuturisticFooter";
 import PageLayout from "@/components/layout/PageLayout";
 import SocialMediaButtons from "@/components/SocialMediaButtons";
 
@@ -39,7 +39,7 @@ const Index = () => {
         <RecentModulesCarousel />
       </main>
 
-      <ProfessionalFooter />
+      <FuturisticFooter />
       <SocialMediaButtons />
     </PageLayout>
   );
