@@ -133,89 +133,86 @@ const MenuSuperior = () => {
               </div>
             </div>
 
-          {/* Mobile - Logo compacto (< 768px) */}
-          <div className="md:hidden flex items-center gap-2">
-            {/* Logo: ícone + texto para não logados, apenas ícone para logados */}
-            <TextLogo to="/dashboard" showFullOnMobile={!user} />
-            <ThemeSwitcher />
-          </div>
+            {/* Mobile - Logo compacto (< 768px) */}
+            <div className="md:hidden flex items-center gap-2">
+              <TextLogo to="/dashboard" showFullOnMobile={!user} />
+              <ThemeSwitcher />
+            </div>
 
-          <div className="hidden md:flex items-center space-x-4">
-            {/* Menu links - always visible */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              <Link to="/">
-                <Button variant="ghost" size="sm" className={cn("text-muted-foreground hover:text-foreground", liquidGlassConfig.enabled && "hover:bg-white/10")}>Início</Button>
-              </Link>
-              <Link to="/modulos">
-                <Button variant="ghost" size="sm" className={cn("text-muted-foreground hover:text-foreground", liquidGlassConfig.enabled && "hover:bg-white/10")}>Módulos</Button>
-              </Link>
-              <Link to="/planos-publicos">
-                <Button variant="ghost" size="sm" className={cn("text-muted-foreground hover:text-foreground", liquidGlassConfig.enabled && "hover:bg-white/10")}>Planos</Button>
-              </Link>
-              <Link to="/dashboard">
-                <Button variant="ghost" size="sm" className={cn("menu-paineis-link text-muted-foreground hover:text-foreground font-semibold", liquidGlassConfig.enabled && "hover:bg-white/10")}>Painéis</Button>
-              </Link>
-            </nav>
+            <div className="hidden md:flex items-center space-x-4">
+              <nav className="hidden lg:flex items-center space-x-1">
+                <Link to="/">
+                  <Button variant="ghost" size="sm" className={cn("text-muted-foreground hover:text-foreground", liquidGlassConfig.enabled && "hover:bg-white/10")}>Início</Button>
+                </Link>
+                <Link to="/modulos">
+                  <Button variant="ghost" size="sm" className={cn("text-muted-foreground hover:text-foreground", liquidGlassConfig.enabled && "hover:bg-white/10")}>Módulos</Button>
+                </Link>
+                <Link to="/planos-publicos">
+                  <Button variant="ghost" size="sm" className={cn("text-muted-foreground hover:text-foreground", liquidGlassConfig.enabled && "hover:bg-white/10")}>Planos</Button>
+                </Link>
+                <Link to="/dashboard">
+                  <Button variant="ghost" size="sm" className={cn("menu-paineis-link text-muted-foreground hover:text-foreground font-semibold", liquidGlassConfig.enabled && "hover:bg-white/10")}>Painéis</Button>
+                </Link>
+              </nav>
 
-            {user ? (
-              <>
-                <UserWalletDropdown onLogout={handleLogout} />
-                <UserProfileDropdown onLogout={handleLogout} />
-              </>
-            ) : (
-              <>
-                {liquidGlassConfig.enabled ? (
-                  <>
-                    <LiquidGlassButton
-                      variant="outline"
-                      className="text-sm px-4 py-2 !bg-[hsl(262,83%,58%)] !border-[hsl(262,83%,58%)] hover:!bg-[hsl(262,83%,48%)] !text-white"
-                      onClick={() => navigate('/registration')}
-                      ariaLabel="Cadastre-se"
-                    >
-                      Cadastre-se
-                    </LiquidGlassButton>
-                    <LiquidGlassButton
-                      variant="primary"
-                      className="text-sm px-4 py-2 !bg-secondary !hover:bg-secondary/90"
-                      onClick={() => navigate('/login')}
-                      ariaLabel="Entrar"
-                    >
-                      Entrar
-                    </LiquidGlassButton>
-                  </>
-                ) : (
-                  <>
-                    <Link to="/registration">
-                      <Button size="sm" className="bg-[hsl(262,83%,58%)] hover:bg-[hsl(262,83%,48%)] text-white font-semibold">
+              {user ? (
+                <>
+                  <UserWalletDropdown onLogout={handleLogout} />
+                  <UserProfileDropdown onLogout={handleLogout} />
+                </>
+              ) : (
+                <>
+                  {liquidGlassConfig.enabled ? (
+                    <>
+                      <LiquidGlassButton
+                        variant="outline"
+                        className="text-sm px-4 py-2 !bg-[hsl(262,83%,58%)] !border-[hsl(262,83%,58%)] hover:!bg-[hsl(262,83%,48%)] !text-white"
+                        onClick={() => navigate('/registration')}
+                        ariaLabel="Cadastre-se"
+                      >
                         Cadastre-se
-                      </Button>
-                    </Link>
-                    <Link to="/login">
-                      <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold">
+                      </LiquidGlassButton>
+                      <LiquidGlassButton
+                        variant="primary"
+                        className="text-sm px-4 py-2 !bg-secondary !hover:bg-secondary/90"
+                        onClick={() => navigate('/login')}
+                        ariaLabel="Entrar"
+                      >
                         Entrar
-                      </Button>
-                    </Link>
-                  </>
-                )}
-              </>
-            )}
-          </div>
+                      </LiquidGlassButton>
+                    </>
+                  ) : (
+                    <>
+                      <Link to="/registration">
+                        <Button size="sm" className="bg-[hsl(262,83%,58%)] hover:bg-[hsl(262,83%,48%)] text-white font-semibold">
+                          Cadastre-se
+                        </Button>
+                      </Link>
+                      <Link to="/login">
+                        <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold">
+                          Entrar
+                        </Button>
+                      </Link>
+                    </>
+                  )}
+                </>
+              )}
+            </div>
 
-          {/* Mobile - User Wallet e Menu (< 768px) */}
-          <div className="md:hidden flex items-center gap-2">
-            {user && (
-              <>
+            {/* Mobile - User Wallet e Menu (< 768px) */}
+            <div className="md:hidden flex items-center gap-2">
+              {user && (
                 <UserWalletDropdown onLogout={handleLogout} />
-              </>
-            )}
-            <button onClick={toggleMenu} className="p-2 rounded-md text-gray-600 hover:text-brand-purple focus:outline-none dark:text-gray-300 dark:hover:text-purple-400" aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}>
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              )}
+              <button onClick={toggleMenu} className="p-2 rounded-md text-muted-foreground hover:text-foreground focus:outline-none relative z-[60]" aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}>
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile menu (< 768px) */}
+      {/* Mobile menu - FORA do header para não ser limitado pelo stacking context */}
       {isMenuOpen && (
         <>
           {/* Backdrop */}
@@ -290,7 +287,6 @@ const MenuSuperior = () => {
           </div>
         </>
       )}
-      </header>
     </TooltipProvider>
   );
 };
