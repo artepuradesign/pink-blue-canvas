@@ -60,7 +60,7 @@ export const useApiInterceptor = () => {
           }
 
           // Ignorar 401 de endpoints não-críticos que podem falhar brevemente após login
-          const nonCriticalEndpoints = ['/notifications', '/session-monitor', '/module-history/stats'];
+          const nonCriticalEndpoints = ['/notifications', '/session-monitor', '/module-history/stats', '/system-config', '/testimonials', '/plans/active', '/panels', '/modules'];
           const isNonCritical = nonCriticalEndpoints.some(ep => url.includes(ep));
 
           if (isNonCritical) {
