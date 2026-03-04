@@ -126,7 +126,7 @@ const FuturisticFooter = () => {
               { value: '+1.000', label: 'Empresas' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-xl font-bold bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                <div className="text-xl font-bold text-white">
                   {stat.value}
                 </div>
                 <div className="text-gray-500 text-xs mt-1">{stat.label}</div>
