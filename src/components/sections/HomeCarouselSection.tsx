@@ -221,13 +221,13 @@ const HomeCarouselSection: React.FC = () => {
                 <button
                   type="submit"
                   className={cn(
-                    "h-full px-5 py-3.5 flex items-center justify-center gap-2 text-sm font-semibold text-white transition-colors shrink-0",
+                    "h-full px-4 sm:px-5 py-3.5 flex items-center justify-center gap-2 text-sm font-semibold text-white transition-colors shrink-0",
                     isMatrix
                       ? "bg-green-600 hover:bg-green-700"
                       : "bg-secondary hover:bg-secondary/80"
                   )}
                 >
-                  Consultar
+                  <span className="hidden sm:inline">Consultar</span>
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </motion.form>
