@@ -226,7 +226,7 @@ const HomeCarouselSection: React.FC = () => {
                     "h-10 w-10 rounded-full sm:rounded-none sm:w-auto my-auto mr-2 sm:mr-0",
                     isMatrix
                       ? "bg-green-600 hover:bg-green-700"
-                      : "bg-secondary hover:bg-secondary/80"
+                      : "bg-primary hover:bg-primary/80"
                   )}
                 >
                   <span className="hidden sm:inline">Consultar</span>
