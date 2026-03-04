@@ -221,7 +221,9 @@ const HomeCarouselSection: React.FC = () => {
                 <button
                   type="submit"
                   className={cn(
-                    "h-full px-4 sm:px-5 py-3.5 flex items-center justify-center gap-2 text-sm font-semibold text-white transition-colors shrink-0",
+                    "flex items-center justify-center text-sm font-semibold text-white transition-colors shrink-0",
+                    "sm:h-full sm:px-5 sm:py-3.5 sm:gap-2",
+                    "h-10 w-10 rounded-full sm:rounded-none sm:w-auto my-auto mr-2 sm:mr-0",
                     isMatrix
                       ? "bg-green-600 hover:bg-green-700"
                       : "bg-secondary hover:bg-secondary/80"
