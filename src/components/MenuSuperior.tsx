@@ -220,12 +220,12 @@ const MenuSuperior = () => {
         <>
           {/* Backdrop */}
           <div 
-            className="md:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-[800] animate-in fade-in-0 duration-200"
+            className="md:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-[9998] animate-in fade-in-0 duration-200"
             onClick={toggleMenu}
           />
           
           {/* Slide-in Panel */}
-          <div className="md:hidden fixed inset-y-0 right-0 z-[900] w-[85vw] max-w-[320px] animate-in slide-in-from-right duration-300">
+          <div className="md:hidden fixed inset-y-0 right-0 z-[9999] w-[85vw] max-w-[320px] animate-in slide-in-from-right duration-300">
             <div className="h-full flex flex-col bg-card border-l border-border shadow-2xl">
               {/* Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-gradient-to-r from-primary/5 to-transparent">
